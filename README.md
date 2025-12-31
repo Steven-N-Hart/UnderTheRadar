@@ -1,70 +1,44 @@
-# 📡 UnderTheRadar (v1.0.0)
+# 📡 UnderTheRadar (v1.0.1)
 **Stay Active. Stay Stealthy. Stay Under The Radar.**
 
-`UnderTheRadar` is a cross-platform activity simulator designed to keep your status "Active" by mimicking human behavior through randomized mouse movements and keystrokes. It features a high-contrast "Dark Mode" interface and a stealthy background mode that keeps your workspace clean.
+`UnderTheRadar` is a cross-platform activity simulator designed to keep your status "Active" by mimicking human behavior through randomized mouse movements and keystrokes. It features a high-contrast "Dark Mode" interface and a stealthy background mode.
 
 ---
 
 ## 🚀 Installation
 
 ### Windows (No Admin Required)
-1.  **Download** the `UnderTheRadar-1.0-win64.msi` installer.
-2.  **Run** the installer. It will automatically install the app to your local `AppData` folder to bypass the need for an administrator password.
-3.  **Launch** UnderTheRadar from your Desktop or Start Menu.
+1. **Download** the `UnderTheRadar-win64.msi` installer.
+2. **Run** the installer. It installs to your local `AppData` folder, bypassing the need for an administrator password.
+3. **Launch** from your Desktop or Start Menu.
 
-### macOS (Portable Mode)
-1.  **Download** and unzip `UnderTheRadar_Mac.zip`.
-2.  **Move** `UnderTheRadar.app` into your **Applications** folder.
-3.  **To Launch**: Right-click the app icon and select **Open**. When the warning appears about an "unidentified developer," click **Open** again.
+### macOS (Non-Admin Setup)
+Because this app is not signed by Apple, macOS will initially block it. Follow these steps to launch without admin rights:
+1. **Download** and unzip `UnderTheRadar_Mac.zip`.
+2. **Move** `UnderTheRadar.app` to your **Applications** folder.
+3. **First Launch**: 
+   - **Right-Click** (or Ctrl-Click) the app and select **Open**.
+   - If a "Malware" warning appears with no "Open" button, click **Cancel**.
+   - Go to **System Settings > Privacy & Security**. Scroll down to the **Security** section and click **"Open Anyway"**.
+   - Confirm by clicking **Open** in the final pop-up.
 
 ---
 
 ## 🛠 Features
-
-* **Hybrid Simulation**: Randomly chooses between subtle mouse "jiggles" and safe keystrokes (like `Shift` or `F15`) to ensure activity is detected by all major monitoring platforms.
-* **Stealth Tray Mode**: Closing the window with the **"X"** button hides the app to your System Tray (Windows) or Menu Bar (Mac). It continues running silently in the background.
-* **No-Admin Architecture**: Built specifically to be installed and run without requiring IT department permissions.
-* **Fail-Safe**: Need to stop it instantly? Move your mouse to any corner of the screen to trigger the "Fail-Safe" and kill the script.
+* **Hybrid Simulation**: Random mouse "jiggles" and safe keystrokes (Shift/F15).
+* **Stealth Tray Mode**: Closing the window hides the app to your System Tray (Windows) or Menu Bar (Mac).
+* **No-Admin Architecture**: Designed specifically for restricted corporate environments.
+* **Fail-Safe**: Slam your mouse into any corner of the screen to emergency-stop the script.
 
 ---
 
 ## 🎮 How to Use
-
-1.  **START**: Click the orange-bordered **START** button. The border will vanish from Start and appear around Stop, indicating the "Pulse" is active.
-2.  **HIDE**: Close the window to move it to the tray/menu bar.
-3.  **RESTORE**: Right-click the **Radar Icon** in your tray (bottom right on Windows) or menu bar (top right on Mac) and select **Show**.
-4.  **STOP**: Click the **STOP** button to cease all activity.
-
----
-
-## 📋 Technical Specs
-
-| Detail | Specification |
-| :--- | :--- |
-| **Language** | Python 3.12 |
-| **Libraries** | `pyautogui`, `tkinter`, `pystray`, `Pillow` |
-| **Random Interval** | 30 to 120 seconds |
-| **Platform** | Windows (MSI) & macOS (App Bundle) |
+1. **START**: Click the orange-bordered button to begin the "Pulse".
+2. **HIDE**: Close the window to move it to the tray/menu bar.
+3. **RESTORE**: Right-click the **Radar Icon** in your tray/menu bar and select **Show**.
+4. **STOP**: Click the **STOP** button to end simulation.
 
 ---
 
 ## ⚠️ Disclaimer
-*This tool is for educational and simulation purposes only. Use of activity simulators may be subject to your organization's IT policy. Use responsibly.*
-
-
-How to use this .spec file
-## On Windows: 
-Run 
-
-```shell
-pyinstaller UnderTheRadar.spec
-```
-
-It will ignore the BUNDLE section and create UnderTheRadar.exe using the .ico.
-
-## On Mac: 
-Run 
-```shell
-pyinstaller UnderTheRadar.spec 
-```
-on a Mac computer. It will trigger the BUNDLE section, create UnderTheRadar.app, and use the .icns.
+*This tool is for educational purposes. Use of activity simulators may be subject to your organization's IT policy. Use responsibly.*

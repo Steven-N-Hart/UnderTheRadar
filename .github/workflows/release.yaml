@@ -40,15 +40,16 @@ jobs:
       - name: Build App Bundle
         run: |
           pyinstaller --noconsole --onefile --windowed --icon=assets/radar.icns -n "UnderTheRadar" UnderTheRadar.py
-      - name: Create DMG
+      - name: Create ZIP
         run: |
-          # Use hdiutil (native Mac tool) to create a basic DMG
-          hdiutil create -volname "UnderTheRadar" -srcfolder dist/UnderTheRadar.app -ov -format UDZO UnderTheRadar.dmg
-      - name: Upload DMG
+          # Zipping the .app bundle preserves the necessary Mac file structure
+          cd dist
+          zip -r ../UnderTheRadar_Mac.zip UnderTheRadar.app
+      - name: Upload ZIP
         uses: actions/upload-artifact@v4
         with:
           name: UnderTheRadar-Mac
-          path: UnderTheRadar.dmg
+          path: UnderTheRadar_Mac.zip
 
   create-release:
       needs: [build-windows, build-mac]
@@ -75,7 +76,7 @@ jobs:
           with:
             files: |
               release-assets/*.msi
-              release-assets/*.dmg
+              release-assets/*.zip
             body_path: README.md
             draft: false
             prerelease: false
