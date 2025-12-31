@@ -7,9 +7,10 @@ product_name = "UnderTheRadar"
 # Ensure the console is hidden
 base = "Win32GUI" if sys.platform == "win32" else None
 
-# Build options: include your assets folder
+# Build options: include your assets folder and all required libraries
 build_exe_options = {
-    "packages": ["pyautogui", "tkinter"],
+    # Added pystray and PIL (Pillow) to ensure the tray icon works
+    "packages": ["pyautogui", "tkinter", "pystray", "PIL"],
     "include_files": ["assets/"]
 }
 
@@ -37,7 +38,7 @@ setup(
             base=base,
             icon="assets/radar.ico",
             shortcut_name=product_name,
-            shortcut_dir="DesktopFolder", # Adds a desktop icon automatically
+            shortcut_dir="DesktopFolder",
         )
     ],
 )
